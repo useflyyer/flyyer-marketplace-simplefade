@@ -101,6 +101,6 @@ module.exports = {
     /* Some useful plugins: */
     // require("@tailwindcss/line-clamp"),
     // require("@tailwindcss/aspect-ratio"),
-    // require("tailwindcss-textshadow"),
+    require("tailwindcss-textshadow"),
   ],
 };
