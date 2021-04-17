@@ -895,10 +895,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flayyer/cli@^1.13.5":
-  version "1.13.5"
-  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.13.5.tgz#345828e77ae057d0ec6072e2cb9e38909c92cdfe"
-  integrity sha512-NysTY7qHdE0f9thN+rJxifajlJgGLfT12WqhiYxkzfDReQBeZ4yMnLLkg7NRBIbKdPVLjiaaRCv1OHTc0Pzz2g==
+"@flayyer/cli@^1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.14.0.tgz#a7c8fafd11baaa5ebeb03d195636f8e9f6a190a2"
+  integrity sha512-amYa/gHtECCSm2AFoI49m+4xSW9cgmv9R9TKUJgThz+7+71t9y/LDmk7Ex5LJsLsmdb3JHwF7w1zpIZJ0WliNA==
   dependencies:
     "@flayyer/goerr" "^1.2.0"
     "@oclif/command" "^1.8.0"
@@ -920,15 +920,20 @@
     tslib "^2.2.0"
     twemoji "^13.0.2"
 
-"@flayyer/flayyer-types@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@flayyer/flayyer-types/-/flayyer-types-1.7.1.tgz#a3415097cbd28f2d1f51bfd84b559abb8f4d4a89"
-  integrity sha512-GhnNMWC160LCK3PYf2ZxbzKpMMh2AYEVUGtPFYp0GCC9XVQQTRqbvFgUzm0rGASyoSUn9nWdwR6VuaJzgZ5MVA==
+"@flayyer/flayyer-types@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@flayyer/flayyer-types/-/flayyer-types-1.8.0.tgz#b6c94b79d717a98f4eae6462e84af6f3f42259f1"
+  integrity sha512-Py4DgB4dVSo/ToBDjo5jCqpyH52MVaLTv7cuSuB6uYXwPiAwLoBdAzGAb3WltSYJtKddVyFWCQm/8x2m9gvI4g==
 
 "@flayyer/goerr@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@flayyer/goerr/-/goerr-1.2.0.tgz#ac49ccde7ef9cf15b083a3b8a9dfcc2b98036c35"
   integrity sha512-CvCxjtJiPyPLudiN8l1ax4lNJNhZmJ04XI0RidNCOMaT2e8zHp54KXYlOyAb0gbl80TTKhfhrTicgJeXm1tjsg==
+
+"@flayyer/proxy@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@flayyer/proxy/-/proxy-0.1.0.tgz#5314c8813d6af78f14b453fb28259374c8128782"
+  integrity sha512-9TJ/vVt4gUx7Q8KYblQEi8yiKYt1Z9ai/cN6idm9TJe4wUA7nHj9pda7LGVElORun5LfBs+R3cVPVYSt1m6cJA==
 
 "@flayyer/use-googlefonts@^0.3.0":
   version "0.3.0"
@@ -8454,10 +8459,10 @@ use-fit-text@^2.4.0:
   dependencies:
     resize-observer-polyfill "^1.5.1"
 
-use-smartcrop@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/use-smartcrop/-/use-smartcrop-0.3.2.tgz#c38edcd203c7ce443f05d8fbf262241a93f1c8bb"
-  integrity sha512-Nz5Y/sN9/7Tut33VT8Z2IyQQmGqZEdlxVZJRLDlvXwvZa4XmgB66UT0N6zMPMjXMbmKHRp2jF8sDP4H8gT4u4Q==
+use-smartcrop@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/use-smartcrop/-/use-smartcrop-0.3.4.tgz#8ece2fcc657158660741f19b10add8ee919842c5"
+  integrity sha512-aXctUrAQ4+ahBQ9AUcEWy7KPxbQIOlp5N3ilFozGDujPoWm9ZHre7APR7boQyxdvLKKkMvEDh5kqaGHxB2k6kg==
   dependencies:
     smartcrop "^2.0.3"
 
