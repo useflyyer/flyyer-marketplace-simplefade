@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import {TemplateProps} from '@flayyer/flayyer-types';
 import {useGoogleFonts} from '@flayyer/use-googlefonts';
+import {proxy} from '@flayyer/proxy';
 import clsx from 'clsx';
 import useFitText from 'use-fit-text';
 import {useSmartcrop} from 'use-smartcrop';
@@ -10,7 +11,6 @@ import logoOutline from '../static/logo.svg';
 
 import {Layer} from '../components/layer';
 import {getPreferredModeFromPalette} from '../utils/color';
-import {proxy} from '@flayyer/proxy';
 
 // Make sure to 'export default' a React component
 export default function ArticleTemplate({
@@ -23,7 +23,6 @@ export default function ArticleTemplate({
     title = 'Create images with React.js',
     description = 'Take control over the content and add custom logic using queryparams as props 🚀',
     date = new Date().toISOString(),
-    // Image = 'https://www.theclinic.cl/wp-content/uploads/2021/04/A_UNO_1256264.jpg',
     image = 'https://images.pexels.com/photos/4167544/pexels-photo-4167544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     fonts = ['Inter'],
     logo = logoOutline,
@@ -68,16 +67,8 @@ export default function ArticleTemplate({
           className="w-full h-full bg-white dark:bg-black"
         />
       </Layer>
-      <Layer
-        className={clsx(
-          'bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50'
-        )}
-      />
-      <Layer
-        className={clsx(
-          'bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30'
-        )}
-      />
+      <Layer className="bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50" />
+      <Layer className="bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30" />
 
       <Layer
         className={clsx([
@@ -134,19 +125,20 @@ export default function ArticleTemplate({
               'row-end-13 row-span-full col-end-13 col-span-full',
               'banner:col-span-3 banner:row-span-2 banner:col-end-13 banner:row-end-13',
               'sq:col-span-4 sq:row-span-2 sq:col-end-13 sq:row-end-13',
-              'story:row-span-2 story:row-end-13'
+              'story:row-span-2 story:row-end-13',
+              'flex'
             ])}
           >
             <img
               className={clsx([
-                'w-full h-full',
-                'object-contain banner:object-right-bottom',
+                'flex-1',
+                'object-contain object-center banner:object-right-bottom',
                 // Filter: brightness(0); creates a black mask
                 // filter: brightness(0) invert(1); creates a white mask
                 !solid && 'opacity-80 filter brightness-0 invert-0 dark:invert'
               ])}
               src={proxy(logo)}
-            />
+              />
           </div>
         )}
       </Layer>

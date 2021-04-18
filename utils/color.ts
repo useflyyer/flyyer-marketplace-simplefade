@@ -49,7 +49,7 @@ export function getPreferredContrast(
 }
 
 const white = chroma('white');
-  const black = chroma('black');
+const black = chroma('black');
 export function getPreferredModeFromPalette(
   palette: string[] | number[][],
   defaultMode: 'light' | 'dark' = 'light'
@@ -57,6 +57,7 @@ export function getPreferredModeFromPalette(
   if (!palette || palette.length === 0) {
     return defaultMode;
   }
+
   const lightContrasts: number[] = [];
   const darkContrasts: number[] = [];
   for (const color of palette) {
@@ -80,11 +81,11 @@ export function getPreferredModeFromPalette(
 
   if (lightContrast > darkContrast) {
     return 'dark';
-  } else if (lightContrast < darkContrast) {
-    return 'light';
-  } else {
-    return defaultMode;
   }
+  if (lightContrast < darkContrast) {
+    return 'light';
+  }
+  return defaultMode;
 }
 
 function avg(numbers: number[]) {
