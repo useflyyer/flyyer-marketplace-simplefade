@@ -82,9 +82,11 @@ export function getPreferredModeFromPalette(
   if (lightContrast > darkContrast) {
     return 'dark';
   }
+
   if (lightContrast < darkContrast) {
     return 'light';
   }
+
   return defaultMode;
 }
 

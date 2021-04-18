@@ -9,7 +9,6 @@ import {useSmartcrop} from 'use-smartcrop';
 import '../styles/tailwind.css';
 import logoOutline from '../static/logo.svg';
 
-import {Layer} from '../components/layer';
 import {getPreferredModeFromPalette} from '../utils/color';
 
 // Make sure to 'export default' a React component
@@ -138,10 +137,19 @@ export default function ArticleTemplate({
                 !solid && 'opacity-80 filter brightness-0 invert-0 dark:invert'
               ])}
               src={proxy(logo)}
-              />
+            />
           </div>
         )}
       </Layer>
     </div>
+  );
+}
+
+function Layer({className, ...props}: React.ComponentPropsWithoutRef<'div'>) {
+  return (
+    <div
+      {...props}
+      className={clsx('absolute inset-0 w-full h-full', className)}
+    />
   );
 }
