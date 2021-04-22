@@ -9,7 +9,7 @@
     "test": "xo --fix"
   },
   "dependencies": {
-    "@flayyer/flayyer-types": "^1.8.0",
+    "@flayyer/flayyer-types": "^1.9.0",
     "@flayyer/proxy": "^0.1.0",
     "@flayyer/use-googlefonts": "^0.3.0",
     "chroma-js": "^2.1.1",
@@ -20,7 +20,7 @@
     "use-smartcrop": "^0.3.4"
   },
   "devDependencies": {
-    "@flayyer/cli": "^1.14.0",
+    "@flayyer/cli": "^1.15.1",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@tailwindcss/postcss7-compat": "^2.1.0",
     "@types/chroma-js": "^2.1.3",
@@ -34,7 +34,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tailwindcss-textshadow": "^2.1.3",
     "typescript": "^4.2.4",
-    "xo": "^0.38.2"
+    "xo": "^0.39.1"
   },
   "xo": {
     "prettier": true,
@@ -46,7 +46,9 @@
     "rules": {
       "no-unused-vars": "off",
       "react/prop-types": "off",
-      "react/function-component-definition": "off"
+      "react/function-component-definition": "off",
+      "unicorn/no-array-reduce": "off",
+      "@typescript-eslint/no-unsafe-argument": "off"
     }
   }
 }
