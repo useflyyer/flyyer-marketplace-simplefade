@@ -19,5 +19,5 @@ module.exports = config({
   license: "MIT",
   private: false,
   repository: "https://github.com/flayyer/flayyer-marketplace-simplefade",
-  sizes: ["THUMBNAIL", "BANNER", "SQUARE", "STORY", "FREE"],
+  sizes: ["THUMBNAIL", "BANNER", "SQUARE", "STORY"],
 });
