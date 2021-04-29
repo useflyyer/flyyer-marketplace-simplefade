@@ -1,6 +1,7 @@
 import React from 'react';
 import {TemplateProps} from '@flayyer/flayyer-types';
 import {useGoogleFonts} from '@flayyer/use-googlefonts';
+import {Variable as V, Validator, Static} from '@flayyer/variables';
 import {proxy} from '@flayyer/proxy';
 import clsx from 'clsx';
 import useFitText from 'use-fit-text';
@@ -8,8 +9,42 @@ import {useSmartcrop} from 'use-smartcrop';
 
 import '../styles/tailwind.css';
 import logoOutline from '../static/logo.svg';
+import img1 from '../static/img1.jpeg';
+import img2 from '../static/img2.jpeg';
 
 import {getPreferredModeFromPalette} from '../utils/color';
+import {Layer} from '../components/layers';
+
+export const schema = V.Object({
+  title: V.String({default: 'Create images with React.js'}),
+  description: V.String({
+    default:
+      'Take control over the content and add custom logic using queryparams as props 🚀'
+  }),
+  image: V.Image({
+    description: 'Background image',
+    default: img2,
+    examples: [img1, img2]
+  }),
+  logo: V.Image({
+    description: 'Transparent is recommended',
+    default: logoOutline
+  }),
+  date: V.DateTime({
+    description: 'Published date',
+    default: new Date().toISOString()
+  }),
+  font: V.Optional(V.Font({default: 'Inter', examples: ['']})),
+  solid: V.Optional(
+    V.Boolean({
+      title: 'Solid logo',
+      description: 'Enable for non-transparent logo',
+      default: false
+    })
+  )
+});
+type Variables = Static<typeof schema>;
+const validator = new Validator(schema);
 
 // Make sure to 'export default' a React component
 export default function ArticleTemplate({
@@ -17,28 +52,22 @@ export default function ArticleTemplate({
   height = 630,
   locale = 'en',
   variables
-}: TemplateProps) {
-  const {
-    title = 'Create images with React.js',
-    description = 'Take control over the content and add custom logic using queryparams as props 🚀',
-    date = new Date().toISOString(),
-    image = 'https://images.pexels.com/photos/4167544/pexels-photo-4167544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    fonts = ['Inter'],
-    logo = logoOutline,
-    solid = false
-  } = variables;
+}: TemplateProps<Variables>) {
   const {fontSize, ref} = useFitText({minFontSize: 20, maxFontSize: 100});
-  const fontsParsed: string[] = (Array.isArray(fonts) ? fonts : [fonts]).filter(
-    Boolean
-  );
-  const font = useGoogleFonts(
-    fontsParsed.map((f) => ({
+
+  const {
+    data: {title, description, image, logo, solid, font, date: dateString}
+  } = validator.parse(variables);
+
+  const fonts = [font].filter(Boolean) as string[];
+  const googleFont = useGoogleFonts(
+    fonts.map((f) => ({
       family: f,
       styles: [400, 600]
     }))
   );
 
-  const dateParsed = Date.parse(date); // In ms
+  const dateParsed = dateString && Date.parse(dateString); // In ms
   const formatter = new Intl.DateTimeFormat(locale, {dateStyle: 'long'} as any);
 
   const cropped = useSmartcrop(proxy(image), {width, height, minScale: 1});
@@ -55,10 +84,10 @@ export default function ArticleTemplate({
         'relative w-full h-full antialiased overflow-hidden',
         {
           dark: scheme === 'dark',
-          'flayyer-ready': font.status && cropped.status
+          'flayyer-ready': googleFont.status && cropped.status
         }
       ])}
-      style={{fontFamily: fontsParsed.join(', ')}}
+      style={{fontFamily: fonts.join(', ')}}
     >
       <Layer>
         <img
@@ -82,7 +111,7 @@ export default function ArticleTemplate({
             'text-gray-900 dark:text-white'
           ])}
         >
-          {Number.isFinite(dateParsed) && (
+          {dateParsed && Number.isFinite(dateParsed) && (
             <time className="block text-gray-800 dark:text-gray-100 opacity-90 text-xs tracking-tight">
               {formatter.format(dateParsed)}
             </time>
@@ -142,14 +171,5 @@ export default function ArticleTemplate({
         )}
       </Layer>
     </div>
-  );
-}
-
-function Layer({className, ...props}: React.ComponentPropsWithoutRef<'div'>) {
-  return (
-    <div
-      {...props}
-      className={clsx('absolute inset-0 w-full h-full', className)}
-    />
   );
 }
