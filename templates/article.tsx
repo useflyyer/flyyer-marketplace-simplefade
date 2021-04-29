@@ -32,9 +32,11 @@ export const schema = V.Object({
   }),
   date: V.Date({
     description: 'Published date',
-    default: new Date().toISOString().substr(0,16) // remove time and tz
+    default: new Date().toISOString().slice(0, 10) // Remove time and tz
   }),
-  font: V.Optional(V.Font({default: 'Inter', examples: ['Montserrat', 'Arvo']})),
+  font: V.Optional(
+    V.Font({default: 'Inter', examples: ['Montserrat', 'Arvo']})
+  ),
   solid: V.Optional(
     V.Boolean({
       title: 'Solid logo',
