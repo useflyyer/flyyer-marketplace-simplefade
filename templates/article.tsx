@@ -30,11 +30,11 @@ export const schema = V.Object({
     description: 'Transparent is recommended',
     default: logoOutline
   }),
-  date: V.DateTime({
+  date: V.Date({
     description: 'Published date',
-    default: new Date().toISOString()
+    default: new Date().toISOString().substr(0,16) // remove time and tz
   }),
-  font: V.Optional(V.Font({default: 'Inter', examples: ['']})),
+  font: V.Optional(V.Font({default: 'Inter', examples: ['Montserrat', 'Arvo']})),
   solid: V.Optional(
     V.Boolean({
       title: 'Solid logo',
