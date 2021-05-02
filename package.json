@@ -21,7 +21,7 @@
     "use-smartcrop": "^0.3.4"
   },
   "devDependencies": {
-    "@flayyer/cli": "^1.17.2",
+    "@flayyer/cli": "^1.17.3",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@tailwindcss/postcss7-compat": "^2.1.2",
     "@types/chroma-js": "^2.1.3",

@@ -895,10 +895,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flayyer/cli@^1.17.2":
-  version "1.17.2"
-  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.17.2.tgz#7db6f91e65c0677cea090b9517b34d7816ab83ad"
-  integrity sha512-bI7Hhv690orP3z69dfDMBNMwgsRTRcwYaGHecJByYoRn/tbA0cjUgsZmuDi369r27/4o/OVdAknTA6iazm6yqw==
+"@flayyer/cli@^1.17.3":
+  version "1.17.3"
+  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.17.3.tgz#39882cc1bd0ab8f60c6300955fc5553f8ea0fd9a"
+  integrity sha512-MNbwmYvAFAll2GgcMmOm+PvcK/Y9SF0Sm0PVE/sscuZyI+4KbECKAKzaJkg+fWWIhGCVXxc+fE+nJtS8EVze0A==
   dependencies:
     "@flayyer/flayyer" "^2.3.1"
     "@flayyer/flayyer-types" "^1.11.0"
