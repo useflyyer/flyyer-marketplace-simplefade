@@ -13,7 +13,6 @@ module.exports = config({
     Ideal for news or blogpost with a featured image.
     Automatically centers the image base on the point of interest and uses the best white/dark scheme depending on the contract with the featured image.
   `,
-  marketplace: true,
   homepage: 'https://flayyer.com',
   keywords: ['flayyer', 'free', 'fade', 'contrast'],
   license: 'MIT',

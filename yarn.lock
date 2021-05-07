@@ -895,13 +895,13 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flayyer/cli@^1.17.3":
-  version "1.17.3"
-  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.17.3.tgz#39882cc1bd0ab8f60c6300955fc5553f8ea0fd9a"
-  integrity sha512-MNbwmYvAFAll2GgcMmOm+PvcK/Y9SF0Sm0PVE/sscuZyI+4KbECKAKzaJkg+fWWIhGCVXxc+fE+nJtS8EVze0A==
+"@flayyer/cli@^1.17.4":
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/@flayyer/cli/-/cli-1.17.4.tgz#baa55cf41414a00aa3c8a6f10d6492970b19be87"
+  integrity sha512-8st30BYBq1sFozSNI5y4YzFm7MaOTuHGWPJk+boHAgSp2zinkBmketm6bE72OaGee4w1AVFG98kPJLieXa8bEg==
   dependencies:
     "@flayyer/flayyer" "^2.3.1"
-    "@flayyer/flayyer-types" "^1.11.0"
+    "@flayyer/flayyer-types" "^1.11.1"
     "@flayyer/goerr" "^1.2.0"
     "@oclif/command" "^1.8.0"
     "@oclif/config" "^1.17.0"
@@ -923,10 +923,10 @@
     tslib "^2.2.0"
     twemoji "^13.0.2"
 
-"@flayyer/flayyer-types@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@flayyer/flayyer-types/-/flayyer-types-1.11.0.tgz#751c5c7e7d2a27ad6aacf54611454de572898847"
-  integrity sha512-ByKAmQbGoD2Hs2jiMtdaFv2rsNpuo5q0tn3GQMR2l+ogJXAp4o4RPdmSA0hebwOGg8rXiqI3teMFAyNZgKsrCg==
+"@flayyer/flayyer-types@^1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@flayyer/flayyer-types/-/flayyer-types-1.11.1.tgz#60df0d62e7513d7aefb7a081ee11b3d775d6c3bf"
+  integrity sha512-Z7BLNE+ohiBfVE7o3tbhZK7HWYEmZ/MXuDw86zh636cGmWhJZqrLLWaYanrBPFboViPccSwAK8DrxHThpVv5OQ==
 
 "@flayyer/flayyer@^2.3.1":
   version "2.3.1"
@@ -1245,10 +1245,10 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.6.tgz#df9c3c8b31a247ec315e6996566be3171df4b3b1"
   integrity sha512-0/HnwIfW4ki2D8L8c9GVcG5I72s9jP5GSLVF0VIXDW00kmIpA6O33G7a8n59Tmh7Nz0WUC3rSb7PTY/sdW2JzA==
 
-"@types/react@^17.0.4":
-  version "17.0.4"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.4.tgz#a67c6f7a460d2660e950d9ccc1c2f18525c28220"
-  integrity sha512-onz2BqScSFMoTRdJUZUDD/7xrusM8hBA2Fktk2qgaTYPCgPvWnDEgkrOs8hhPUf2jfcIXkJ5yK6VfYormJS3Jw==
+"@types/react@^17.0.5":
+  version "17.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.5.tgz#3d887570c4489011f75a3fc8f965bf87d09a1bea"
+  integrity sha512-bj4biDB9ZJmGAYTWSKJly6bMr4BLUiBrx9ujiJEoP9XIDY9CTaPGxE5QWN/1WjpPLzYF7/jRNnV2nNxNe970sw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -3128,10 +3128,10 @@ dotenv@^5.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
   integrity sha512-4As8uPrjfwb7VXC+WnLCbXK7y+Ueb2B3zgNCePYfhxS1PYeaO1YTeplffTEcbfLhvFNGLAz90VvJs9yomG7bow==
 
-dotenv@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
-  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+dotenv@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.0.tgz#2408af4e39378375b7eebe30b7b54989e36d6e46"
+  integrity sha512-yy3x9XjojW8ROTBePD25AcMoHqGHsvHmtfw8QWlpEXyMMXXPj6brUA464AptUvHuTPRmNz6Sd3ZLNLeJl6dHJA==
 
 duplexer2@~0.1.4:
   version "0.1.4"
