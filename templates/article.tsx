@@ -41,7 +41,7 @@ export const schema = V.Object({
     V.Boolean({
       title: 'Solid logo',
       description: 'Enable for non-transparent logo',
-      default: false
+      default: true
     })
   )
 });
