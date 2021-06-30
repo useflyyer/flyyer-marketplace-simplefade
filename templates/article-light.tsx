@@ -1,16 +1,32 @@
 import React from 'react';
 import {TemplateProps} from '@flayyer/flayyer-types';
-import {Validator, Static} from '@flayyer/variables';
+import {Validator, Static, Variable as V} from '@flayyer/variables';
 
 import '../styles/tailwind.css';
 
 import {BaseTemplate} from '../components/template';
-import {schema as schemaBase} from '../schema';
+import {logos, images, schema as schemaBase, logo, image} from '../schema';
 
 /**
  * Export to enable variables UI on Flayyer.com
  */
-export const schema = schemaBase;
+export const schema = V.Intersect([
+  schemaBase,
+  V.Object({
+    logo: V.Image({
+      title: logo.title,
+      description: logo.description,
+      default: logos.dark,
+      examples: [logos.dark, logos.light]
+    }),
+    image: V.Image({
+      title: image.title,
+      description: image.description,
+      default: images[1],
+      examples: images
+    })
+  })
+]);
 
 type Variables = Static<typeof schema>;
 const validator = new Validator(schema);
@@ -26,11 +42,11 @@ export default function ArticleTemplate({
 
   return (
     <BaseTemplate
-      {...data}
+      {...(data as any)}
       width={width}
       height={height}
       locale={locale}
-      scheme="auto"
+      scheme="light"
     />
   );
 }

@@ -10,8 +10,14 @@ module.exports = config({
   // Optionals
   name: 'Simple Fade',
   description: dedent`
-    Ideal for news or blogpost with a featured image.
+    Ideal for news or blogposts with a featured image.
+
     Automatically centers the image base on the point of interest and uses the best white/dark scheme depending on the contract with the featured image.
+
+    > Credits to [Photo by Lhairton Kelvin Costa from Pexels](https://www.pexels.com/photo/woman-in-red-and-black-polka-dot-long-sleeve-shirt-and-white-shorts-4617115/)
+    > Credits to [Photo by Monica Turlui from Pexels](https://www.pexels.com/photo/smiling-woman-leaning-on-hand-on-unmade-bed-at-home-7218407/)
+    > Credits to [Photo by Aleksandar Pasaric from Pexels](https://www.pexels.com/photo/photo-of-buildings-during-nighttime-2603464/)
+    > Credits to [Photo by Calbert Warner from Pexels](https://www.pexels.com/photo/woman-above-man-2889943/)
   `,
   homepage: 'https://flayyer.com',
   keywords: ['flayyer', 'free', 'fade', 'contrast'],
