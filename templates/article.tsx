@@ -22,8 +22,7 @@ export const schema = V.Intersect([
     image: V.Image({
       title: image.title,
       description: image.description,
-      default: images[0],
-      examples: [images[0], images[1], images[2], images[3], images[4]]
+      examples: [images[1], images[0], images[2], images[3], images[4]]
     })
   })
 ]);
@@ -46,7 +45,7 @@ export default function ArticleTemplate({
       width={width}
       height={height}
       locale={locale}
-      scheme="auto"
+      scheme="light"
     />
   );
 }

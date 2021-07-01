@@ -7,7 +7,6 @@ import {useFitText} from '@flayyer/use-fit-text';
 import {useSmartcrop} from 'use-smartcrop';
 import clsx from 'clsx';
 
-import {getPreferredModeFromPalette} from '../../utils/color';
 import {Layer} from '../layers';
 import {schema} from '../../schema';
 
@@ -16,7 +15,7 @@ export type Variables = Static<typeof schema>;
 export type BaseTemplateProps = React.ComponentProps<'div'> &
   Pick<TemplateProps, 'width' | 'height' | 'locale'> &
   Variables & {
-    scheme: 'light' | 'dark' | 'auto';
+    scheme: 'light' | 'dark';
   };
 
 export function BaseTemplate({
@@ -51,19 +50,11 @@ export function BaseTemplate({
   const formatter = new Intl.DateTimeFormat(locale, {dateStyle: 'long'} as any);
 
   const cropped = useSmartcrop(proxy(image), {width, height, minScale: 1});
-  const palette = cropped.getPalette({height: height / 3});
   if (cropped.error) {
     console.error(cropped.error);
   }
 
-  const schemeAuto = getPreferredModeFromPalette(palette, 'dark');
-
-  let dark = false;
-  if (scheme === 'auto') {
-    dark = schemeAuto === 'dark';
-  } else if (scheme === 'dark') {
-    dark = true;
-  }
+  const dark = scheme === 'dark';
 
   const {fontSize, ref} = useFitText({minFontSize: 20, maxFontSize: 100}, [
     // Font-size's dependencies

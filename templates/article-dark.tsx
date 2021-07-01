@@ -22,7 +22,6 @@ export const schema = V.Intersect([
     image: V.Image({
       title: image.title,
       description: image.description,
-      default: images[2],
       examples: [images[2], images[0], images[1], images[3], images[4]]
     })
   })

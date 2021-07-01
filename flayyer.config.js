@@ -12,7 +12,7 @@ module.exports = config({
   description: dedent`
     Ideal for news or blogposts with a featured image.
 
-    Automatically centers the image base on the point of interest and uses the best white/dark scheme depending on the contract with the featured image.
+    Automatically centers the image base on the point of interest and has 3 possible color schemes: dark, light and colored (you can customize the tint color).
 
     > Credits to [Photo by Lhairton Kelvin Costa from Pexels](https://www.pexels.com/photo/woman-in-red-and-black-polka-dot-long-sleeve-shirt-and-white-shorts-4617115/)
     > Credits to [Photo by Monica Turlui from Pexels](https://www.pexels.com/photo/smiling-woman-leaning-on-hand-on-unmade-bed-at-home-7218407/)
