@@ -78,10 +78,11 @@ export function BaseTemplate({
         <img src={cropped.src} className="w-full h-full" />
       </Layer>
 
+      {children}
+
+      {/* Fade layers */}
       <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30" />
-
-      {children}
 
       <Layer
         className={clsx([
