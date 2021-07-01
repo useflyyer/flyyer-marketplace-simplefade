@@ -23,7 +23,7 @@ export const schema = V.Intersect([
       title: image.title,
       description: image.description,
       default: images[1],
-      examples: images
+      examples: [images[1], images[0], images[1], images[2]]
     })
   })
 ]);

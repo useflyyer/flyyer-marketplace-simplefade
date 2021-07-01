@@ -93,3 +93,4 @@ The development server (`npm run start`) can be buggy sometimes. Please restart 
 > Credits to [Photo by Monica Turlui from Pexels](https://www.pexels.com/photo/smiling-woman-leaning-on-hand-on-unmade-bed-at-home-7218407/)
 > Credits to [Photo by Aleksandar Pasaric from Pexels](https://www.pexels.com/photo/photo-of-buildings-during-nighttime-2603464/)
 > Credits to [Photo by Calbert Warner from Pexels](https://www.pexels.com/photo/woman-above-man-2889943/)
+> Credits to [Photo by Pixabay from Pexels](https://www.pexels.com/photo/man-in-black-tops-wearing-black-headphones-singing-in-front-of-black-condenser-microphone-210913/)

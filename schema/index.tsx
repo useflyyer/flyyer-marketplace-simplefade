@@ -2,6 +2,7 @@ import {Variable as V} from '@flayyer/variables';
 
 import logoDark from '../static/logo-dark.svg';
 import logoLight from '../static/logo-light.svg';
+import image0 from '../static/image0.jpeg';
 import image1 from '../static/image1.jpeg';
 import image2 from '../static/image2.jpeg';
 import image3 from '../static/image3.jpeg';
@@ -11,7 +12,7 @@ export const logos = {
   dark: logoDark,
   light: logoLight
 };
-export const images = [image1, image2, image3, image4];
+export const images = [image0, image1, image2, image3, image4];
 
 export const logo = V.Image({
   description: 'Transparent is recommended',

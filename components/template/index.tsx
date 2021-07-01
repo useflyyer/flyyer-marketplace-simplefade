@@ -36,6 +36,7 @@ export function BaseTemplate({
   scheme,
   // Component props
   className,
+  children,
   ...props
 }: BaseTemplateProps) {
   const fonts = [font, fontSecondary].filter(Boolean) as string[];
@@ -76,7 +77,7 @@ export function BaseTemplate({
   return (
     <div
       className={clsx([
-        'relative w-full h-full antialiased overflow-hidden',
+        'relative w-full h-full subpixel-antialiased overflow-hidden',
         className,
         {dark, 'flayyer-ready': googleFont.status && cropped.status}
       ])}
@@ -85,8 +86,11 @@ export function BaseTemplate({
       <Layer className="bg-white dark:bg-black">
         <img src={cropped.src} className="w-full h-full" />
       </Layer>
-      <Layer className="bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50" />
-      <Layer className="bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30" />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30" />
+
+      {children}
 
       <Layer
         className={clsx([
@@ -141,19 +145,22 @@ export function BaseTemplate({
           <div
             className={clsx([
               'row-end-13 row-span-full col-end-13 col-span-full',
-              'banner:col-span-3 banner:row-span-2 banner:col-end-13 banner:row-end-13',
-              'sq:col-span-4 sq:row-span-2 sq:col-end-13 sq:row-end-13',
+              'banner:col-span-3 banner:row-span-4 banner:col-end-13 banner:row-end-13',
+              'sq:col-span-4 sq:row-span-3 sq:col-end-13 sq:row-end-13',
               'story:row-span-2 story:row-end-13',
-              'flex'
+              'flex justify-end items-end'
             ])}
           >
             <img
               className={clsx([
-                'flex-1',
-                'object-contain object-center banner:object-right-bottom',
+                'max-h-full max-w-full',
+                'rounded sq:rounded',
+                'object-scale-down',
                 // Filter: brightness(0); creates a black mask
                 // filter: brightness(0) invert(1); creates a white mask
-                !solid && 'opacity-80 filter brightness-0 invert-0 dark:invert'
+                solid
+                  ? 'filter drop-shadow-sm sq:drop-shadow-md'
+                  : 'opacity-100 filter brightness-0 invert-0 dark:invert'
               ])}
               src={proxy(logo)}
             />
