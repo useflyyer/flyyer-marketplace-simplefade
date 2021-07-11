@@ -28,11 +28,11 @@ export const image = V.Image({
 
 export const schema = V.Object({
   title: V.String({
-    // Default: 'Almost before we knew it, we had left the ground.',
+    // default: 'Almost before we knew it, we had left the ground.',
     examples: ['Almost before we knew it, we had left the ground.']
   }),
   description: V.String({
-    // Default: 'She stared through the window at the stars. 🚀',
+    // default: 'She stared through the window at the stars. 🚀',
     examples: ['She stared through the window at the stars. 🚀']
   }),
   image,
@@ -40,6 +40,7 @@ export const schema = V.Object({
   date: V.Optional(
     V.DateTime({
       description: 'Published date',
+      // default: new Date().toISOString(),
       examples: [new Date().toISOString()]
     })
   ),

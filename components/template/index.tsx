@@ -108,42 +108,46 @@ export function BaseTemplate({
           style={{fontSize, fontFamily: font || undefined}}
           className={clsx([
             'hidden banner:flex flex-col',
-            'col-span-full row-span-4 sq:row-span-8',
+            'col-span-full row-span-6 sq:row-span-8',
             'text-gray-900 dark:text-white'
           ])}
         >
           {formatter && isFiniteNumber(dateParsed) && (
-            <time className="block text-gray-800 dark:text-gray-100 opacity-90 text-xs tracking-tight">
+            <time className="mb-1 block text-gray-800 dark:text-gray-100 opacity-90 text-xs tracking-tight">
               {formatter.format(dateParsed)}
             </time>
           )}
 
-          <h1
-            className={clsx([
-              'text-xl text-shadow-md sq:text-2xl story:text-3xl font-semibold',
-              'banner:leading-tight sq:leading-tight story:leading-tight',
-              'flex-shrink-0 flex-grow-0'
-            ])}
-          >
-            {title}
-          </h1>
+          {title && (
+            <h1
+              className={clsx([
+                'text-xl text-shadow-md sq:text-2xl story:text-3xl font-semibold',
+                'banner:leading-tight sq:leading-tight story:leading-tight',
+                'flex-shrink-0 flex-grow-0'
+              ])}
+            >
+              {title}
+            </h1>
+          )}
 
-          <p
-            ref={ref}
-            className={clsx([
-              'mt-2',
-              'hidden sq:block',
-              'text-shadow-md',
-              'text-base story:text-lg',
-              'leading-snug story:leading-snug',
-              'flex-shrink flex-grow'
-            ])}
-            style={{
-              fontFamily: fontSecondary || undefined
-            }}
-          >
-            {description}
-          </p>
+          {description && (
+            <p
+              ref={ref}
+              className={clsx([
+                'mt-2',
+                'hidden sq:block',
+                'text-shadow-md',
+                'text-base story:text-lg',
+                'leading-snug story:leading-snug',
+                'flex-shrink flex-grow'
+              ])}
+              style={{
+                fontFamily: fontSecondary || undefined
+              }}
+            >
+              {description}
+            </p>
+          )}
         </header>
 
         {logo && (
