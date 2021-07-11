@@ -1,6 +1,6 @@
 import React from 'react';
-import {TemplateProps} from '@flayyer/flayyer-types';
-import {Validator, Static, Variable as V} from '@flayyer/variables';
+import {TemplateProps} from '@flyyer/types';
+import {Validator, Static, Variable as V} from '@flyyer/variables';
 
 import '../styles/tailwind.css';
 
@@ -8,7 +8,7 @@ import {BaseTemplate} from '../components/template';
 import {logos, images, schema as schemaBase, logo, image} from '../schema';
 
 /**
- * Export to enable variables UI on Flayyer.com
+ * Export to enable variables UI on Flyyer.io
  */
 export const schema = V.Intersect([
   schemaBase,
@@ -22,6 +22,7 @@ export const schema = V.Intersect([
     image: V.Image({
       title: image.title,
       description: image.description,
+      // default: images[1],
       examples: [images[1], images[0], images[2], images[3], images[4]]
     })
   })

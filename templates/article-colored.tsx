@@ -1,6 +1,6 @@
 import React from 'react';
-import {TemplateProps} from '@flayyer/flayyer-types';
-import {Validator, Static, Variable as V} from '@flayyer/variables';
+import {TemplateProps} from '@flyyer/types';
+import {Validator, Static, Variable as V} from '@flyyer/variables';
 import twColors from 'tailwindcss/colors';
 
 import '../styles/tailwind.css';
@@ -23,7 +23,7 @@ const colors: string[] = [
 ];
 
 /**
- * Export to enable variables UI on Flayyer.com
+ * Export to enable variables UI on Flyyer.io
  */
 export const schema = V.Intersect([
   schemaBase,
@@ -49,8 +49,9 @@ export const schema = V.Intersect([
     mode: V.Enum(BlendMode, {
       title: 'Blend mode',
       description: 'Same as CSS',
-      default: BlendMode.color, // Best sane default
+      default: BlendMode.multiply, // Best sane default
       examples: [
+        BlendMode.multiply,
         BlendMode.color,
         BlendMode.hue,
         BlendMode.darken,

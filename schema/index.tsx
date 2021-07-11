@@ -1,4 +1,4 @@
-import {Variable as V} from '@flayyer/variables';
+import {Variable as V} from '@flyyer/variables';
 
 import logoDark from '../static/logo-dark.svg';
 import logoLight from '../static/logo-light.svg';
@@ -54,6 +54,14 @@ export const schema = V.Object({
       title: 'Solid logo',
       description: 'Enable for non-transparent logo',
       default: true
+    })
+  ),
+  fade: V.Optional(
+    V.Number({
+      default: 0.2,
+      minimum: 0,
+      maximum: 1,
+      description: 'Control intensity'
     })
   )
 });

@@ -5,6 +5,6 @@
     "esModuleInterop": true,
     "allowJs": true,
   },
-  "exclude": ["node_modules", ".flayyer-*"],
+  "exclude": ["node_modules", ".flyyer-*"],
   "include": ["types.d.ts", "**/*.ts", "**/*.tsx"]
 }

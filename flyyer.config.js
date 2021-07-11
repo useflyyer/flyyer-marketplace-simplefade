@@ -1,10 +1,10 @@
-const {config, Sizes} = require('@flayyer/flayyer-types');
+const {config, Sizes} = require('@flyyer/types');
 const dedent = require('dedent');
 require('dotenv').config();
 
 module.exports = config({
   engine: 'react-typescript',
-  key: process.env.FLAYYER_KEY,
+  key: process.env.FLYYER_KEY,
   deck: 'simple-fade',
 
   // Optionals
@@ -20,10 +20,10 @@ module.exports = config({
     > Credits to [Photo by Calbert Warner from Pexels](https://www.pexels.com/photo/woman-above-man-2889943/)
     > Credits to [Photo by Pixabay from Pexels](https://www.pexels.com/photo/man-in-black-tops-wearing-black-headphones-singing-in-front-of-black-condenser-microphone-210913/)
   `,
-  homepage: 'https://flayyer.com',
-  keywords: ['flayyer', 'free', 'fade', 'contrast', 'mix-blend-mode'],
+  homepage: 'https://flyyer.io',
+  keywords: ['flyyer', 'free', 'fade', 'contrast', 'mix-blend-mode'],
   license: 'MIT',
   private: false,
-  repository: 'https://github.com/flayyer/flayyer-marketplace-simplefade',
+  repository: 'https://github.com/useflyyer/flyyer-marketplace-simplefade',
   sizes: ['THUMBNAIL', 'BANNER', 'SQUARE', 'STORY']
 });

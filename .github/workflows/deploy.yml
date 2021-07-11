@@ -1,4 +1,4 @@
-name: flayyer-deploy-yarn
+name: flyyer-deploy-yarn
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FLAYYER_KEY: ${{secrets.FLAYYER_KEY}}
+      FLYYER_KEY: ${{secrets.FLYYER_KEY}}
       NODE_ENV: production
 
     steps:

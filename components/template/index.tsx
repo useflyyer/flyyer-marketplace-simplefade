@@ -1,9 +1,10 @@
 import React from 'react';
-import {TemplateProps} from '@flayyer/flayyer-types';
-import {useGoogleFonts} from '@flayyer/use-googlefonts';
-import {proxy} from '@flayyer/proxy';
-import {Static} from '@flayyer/variables';
-import {useFitText} from '@flayyer/use-fit-text';
+import {TemplateProps} from '@flyyer/types';
+import {useGoogleFonts} from '@flyyer/use-googlefonts';
+import {proxy} from '@flyyer/proxy';
+import {goerr} from '@flyyer/goerr';
+import {Static} from '@flyyer/variables';
+import {useFitText} from '@flyyer/use-fit-text';
 import {useSmartcrop} from 'use-smartcrop';
 import clsx from 'clsx';
 
@@ -27,7 +28,8 @@ export function BaseTemplate({
   description,
   logo,
   solid,
-  // Flayyer context props
+  fade,
+  // Flyyer context props
   width,
   height,
   locale,
@@ -47,11 +49,16 @@ export function BaseTemplate({
   );
 
   const dateParsed = date && Date.parse(date); // In ms
-  const formatter = new Intl.DateTimeFormat(locale, {dateStyle: 'long'} as any);
+  const [formatter] = goerr(
+    () => new Intl.DateTimeFormat(locale, {dateStyle: 'long'} as any)
+  );
 
-  const cropped = useSmartcrop(proxy(image), {width, height, minScale: 1});
-  if (cropped.error) {
-    console.error(cropped.error);
+  const [cropped, error] = useSmartcrop(
+    {src: proxy(image)},
+    {width, height, minScale: 1}
+  );
+  if (error) {
+    console.error(error);
   }
 
   const dark = scheme === 'dark';
@@ -70,19 +77,25 @@ export function BaseTemplate({
       className={clsx([
         'relative w-full h-full subpixel-antialiased overflow-hidden',
         className,
-        {dark, 'flayyer-ready': googleFont.status && cropped.status}
+        {dark, 'flyyer-ready': googleFont.status && cropped}
       ])}
       {...props}
     >
       <Layer className="bg-white dark:bg-black">
-        <img src={cropped.src} className="w-full h-full" />
+        {cropped && <img src={cropped} className="w-full h-full" />}
       </Layer>
 
       {children}
 
-      {/* Fade layers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30" />
+      {/* Fade layers with gradient */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-white dark:from-black bottom-3/4 story:bottom-1/2 opacity-0 banner:opacity-50" /> */}
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black top-3/4 opacity-0 banner:opacity-30" /> */}
+
+      {/* Fade layers full */}
+      <Layer
+        className="bg-white dark:bg-black"
+        style={isFiniteNumber(fade) ? {opacity: fade} : undefined}
+      />
 
       <Layer
         className={clsx([
@@ -99,7 +112,7 @@ export function BaseTemplate({
             'text-gray-900 dark:text-white'
           ])}
         >
-          {dateParsed && Number.isFinite(dateParsed) && (
+          {formatter && isFiniteNumber(dateParsed) && (
             <time className="block text-gray-800 dark:text-gray-100 opacity-90 text-xs tracking-tight">
               {formatter.format(dateParsed)}
             </time>
@@ -161,4 +174,8 @@ export function BaseTemplate({
       </Layer>
     </div>
   );
+}
+
+function isFiniteNumber(value: any): value is number {
+  return Number.isFinite(value);
 }

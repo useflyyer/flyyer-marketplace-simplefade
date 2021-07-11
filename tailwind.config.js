@@ -23,11 +23,11 @@ module.exports = {
   },
   /**
    * Toggle dark/light scheme depending on contrast.
-   * https://docs.flayyer.com/docs/advanced/contrast
+   * https://docs.flyyer.io/docs/advanced/contrast
    */
   darkMode: 'class',
   theme: {
-    // Use "em" values instead of "rem" to work with "@flayyer/use-fit-text"
+    // Use "em" values instead of "rem" to work with "@flyyer/use-fit-text"
     fontSize: Object.fromEntries(
       Object.entries(defaultTheme.fontSize).map(([key, value]) => [
         key,
@@ -38,7 +38,7 @@ module.exports = {
       spacing: {
         /**
          * Instagram stories have a recommended safe-area for content.
-         * https://docs.flayyer.com/docs/advanced/safe-area
+         * https://docs.flyyer.io/docs/advanced/safe-area
          */
         storysafe: '250px'
       },
@@ -81,7 +81,7 @@ module.exports = {
     /**
      * We recommend breakpoints based on height rather than width.
      * This is not optimal yet and we are still trying to get a better setup.
-     * Help us defining the best config at https://github.com/flayyer/create-flayyer-app/issues/3
+     * Help us defining the best config at https://github.com/useflyyer/create-flyyer-app/issues/3
      */
     screens: {
       /* For apps where images are always small squares such as WhatsApp (400x400px) */
