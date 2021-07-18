@@ -8769,10 +8769,10 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-use-smartcrop@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/use-smartcrop/-/use-smartcrop-1.0.0.tgz#b8a3b14dce8bcb35ff3ddc54fdd4b03de0a5003f"
-  integrity sha512-rAhZCTFG5j427ItEf2OAD3ZyIFi0FOYao/45dZhMf9ix3+rarzLTu04GVFl4oFKVpaDAWF60cDmT9fuM6++I8Q==
+use-smartcrop@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/use-smartcrop/-/use-smartcrop-1.0.1.tgz#31f0bfb0d6916c7400a3974d8311a2a4a9a83f4c"
+  integrity sha512-Eg/fgVa7LTr22XKDGW92kZO+FSooaw70epwveV4nKinALOM6TKBJgwjaP2lM1lzx2fCjhyH+FiizJy3upiL7xA==
   dependencies:
     dequal "^2.0.2"
     react-use "^17.2.4"
