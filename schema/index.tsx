@@ -62,7 +62,8 @@ export const schema = V.Object({
       default: 0.2,
       minimum: 0,
       maximum: 1,
-      description: 'Control intensity'
+      description: 'Control intensity',
+      examples: [0.2, 0.4, 0.6, 0.8]
     })
   )
 });
