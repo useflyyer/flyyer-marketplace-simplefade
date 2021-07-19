@@ -984,10 +984,10 @@
   resolved "https://registry.yarnpkg.com/@flyyer/types/-/types-2.0.2.tgz#0298fa46cec31391d33e914e0471ff0b614022ef"
   integrity sha512-Omlz4NjVw4joo8iu0LQBU0bRigz8zK/vP2gnxfgoFgjhsOCu0cccvGC8QL5fE68n0hUww4IYQvu/Pnl74FomRA==
 
-"@flyyer/use-fit-text@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@flyyer/use-fit-text/-/use-fit-text-3.0.0.tgz#c79cec92cfdf6bde85e49c882828d64a50411c5a"
-  integrity sha512-y8OJbBXcMd60NSDPZZzfVrUkhy+GYe8MGVEzOoPSV7xW01+xcBJR6wAsiVg7o87ABo9H/4C4iJ5MfEVFWa/QWA==
+"@flyyer/use-fit-text@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@flyyer/use-fit-text/-/use-fit-text-3.0.1.tgz#99bdcc59f4fd6659c55061dec0deb134305af7aa"
+  integrity sha512-bE51XCTURJrRDUCkWUsRKNT8vhzl0Ivar8T2yD43MTE3Q+fzDd+iZxy77HrqycwG35ykQdjua3cRZkDhznNboA==
   dependencies:
     dequal "^2.0.2"
 

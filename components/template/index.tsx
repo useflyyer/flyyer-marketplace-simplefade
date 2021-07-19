@@ -1,6 +1,6 @@
 import React from 'react';
 import {TemplateProps} from '@flyyer/types';
-import {useGoogleFonts} from '@flyyer/use-googlefonts';
+import {useGoogleFonts, GoogleFontsStatus} from '@flyyer/use-googlefonts';
 import {proxy} from '@flyyer/proxy';
 import {goerr} from '@flyyer/goerr';
 import {Static} from '@flyyer/variables';
@@ -63,21 +63,29 @@ export function BaseTemplate({
 
   const dark = scheme === 'dark';
 
-  const {fontSize, ref} = useFitText({minFontSize: 20, maxFontSize: 100}, [
-    // Font-size's dependencies
-    dateParsed,
-    font,
-    title,
-    fontSecondary,
-    description
-  ]);
+  const {fontSize, ref, isCalculating} = useFitText(
+    {minFontSize: 20, maxFontSize: 100, resolution: 6},
+    [
+      // Font-size's dependencies
+      dateParsed,
+      font,
+      title,
+      fontSecondary,
+      description
+    ]
+  );
+
+  const wait =
+    isCalculating ||
+    googleFont.status === GoogleFontsStatus.LOADING ||
+    !cropped;
 
   return (
     <div
       className={clsx([
         'relative w-full h-full subpixel-antialiased overflow-hidden',
         className,
-        {dark, 'flyyer-ready': googleFont.status && cropped}
+        {dark, 'flyyer-wait': wait}
       ])}
       {...props}
     >
