@@ -1,6 +1,6 @@
 {
   "name": "@flyyer/simple-fade",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "private": true,
   "scripts": {
     "start": "flyyer start",
